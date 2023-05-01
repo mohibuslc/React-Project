@@ -1,0 +1,41 @@
+.header {
+    height: 89px;
+    margin-top: 5px;
+    background-color: chocolate;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .header img {
+    height: 90px;
+  }
+  
+  .header a {
+    color: aliceblue;
+    margin-left: 36px;
+    font-size: 22px;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 786px ) {
+    .header {
+      flex-direction: column;
+      height: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  
+    .header img {
+      margin-bottom: 10px;
+    }
+  
+    .header a {
+      margin: 0;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+  }
+  
