@@ -1,13 +1,13 @@
 import './style.css'
 import {useEffect, useState} from 'react'; 
 import axios from 'axios'
-
-
-
-
+import Product from '../Product/Product';
 export default function Shop(){
 
-    const[product , setProduct] = useState([])
+    const[product , setProduct] = useState([]) ; 
+
+    const[cart , setCart]=useState([]) ;
+
 
     useEffect(()=>{
         async function fetchData(){
@@ -23,15 +23,25 @@ export default function Shop(){
 
     },[])
 
+function evenHandler(product){
+
+   const newCart =[...cart , product];
+
+   setCart(newCart)
+}
+
     return(
         <div className="shop-continer">
             <div className="product-continer">
-                <h1>This is Product Continer : {product.length}</h1>
-
+              
+            { 
+                <Product product={product} evenHandler={evenHandler}></Product>
+            }
 
             </div>
             <div className="cart-continer">
                 <h3> Order-Summery</h3>
+                <h1>Selected-ITEM: {cart.length}</h1>
 
             </div>
 
